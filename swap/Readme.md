@@ -25,8 +25,3 @@ Run each swap scheme 1 << 32 times.
 | `./swap-xor.run` | 2.975 ± 0.026 | 2.960 | 3.047 | 3.00 ± 0.03 |
 | `./swap-temp.run` | 0.993 ± 0.006 | 0.986 | 1.001 | 1.00 ± 0.01 |
 | `./swap-stack.run` | 0.991 ± 0.005 | 0.985 | 1.000 | 1.00 |
-
-### Summary
-    ./swap-stack ran
-        1.00 ± 0.01 times faster than ./swap-temp
-        2.99 ± 0.01 times faster than ./swap-xor
