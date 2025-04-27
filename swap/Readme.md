@@ -18,7 +18,9 @@ However, on modern hardware, this is not worthwhile: Swapping with a temporary r
 ## Benchmarks 
 Run on 12th Gen Intel(R) Core(TM) i5-1235U, Fedora 42.
 
-`hyperfine "./swap-xor" "./swap-temp" "./swap-stack"`
+Run each swap scheme 1 << 32 times.
+
+    hyperfine "./swap-xor" "./swap-temp" "./swap-stack"
 ### Benchmark 1: `./swap-xor`
     Time (mean ± σ):      2.954 s ±  0.003 s    [User: 2.950 s, System: 0.001 s]   
     Range (min … max):    2.949 s …  2.957 s    10 runs
