@@ -1,12 +1,12 @@
 .PHONY: all
-all: swap-xor swap-temp swap-stack
+all: swap-xor.run swap-temp.run swap-stack.run
 
 .PHONY: run-hyperfine
-run-hyperfine: swap-xor.run swap-temp.run swap-stack.run
-	hyperfine "./swap-xor.run" "./swap-temp.run" "./swap-stack.run"
+run-hyperfine: all
+	hyperfine "./swap-xor.run" "./swap-temp.run" "./swap-stack.run" --export-markdown benchmark.md
 
 .PHONY: run
-run: swap-xor.run swap-temp.run swap-stack.run
+run: all
 	@echo "Swap with xor scheme"
 	time ./swap-xor.run 
 	@echo "Swap with with temporary register"

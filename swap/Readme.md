@@ -20,19 +20,12 @@ Run on 12th Gen Intel(R) Core(TM) i5-1235U, Fedora 42.
 
 Run each swap scheme 1 << 32 times.
 
-    hyperfine "./swap-xor" "./swap-temp" "./swap-stack"
-### Benchmark 1: `./swap-xor`
-    Time (mean ± σ):      2.954 s ±  0.003 s    [User: 2.950 s, System: 0.001 s]   
-    Range (min … max):    2.949 s …  2.957 s    10 runs
+| Command | Mean [s] | Min [s] | Max [s] | Relative |
+|:---|---:|---:|---:|---:|
+| `./swap-xor.run` | 2.975 ± 0.026 | 2.960 | 3.047 | 3.00 ± 0.03 |
+| `./swap-temp.run` | 0.993 ± 0.006 | 0.986 | 1.001 | 1.00 ± 0.01 |
+| `./swap-stack.run` | 0.991 ± 0.005 | 0.985 | 1.000 | 1.00 |
 
-### Benchmark 2: `./swap-temp`
-    Time (mean ± σ):     988.5 ms ±   5.0 ms    [User: 986.7 ms, System: 0.8 ms]
-    Range (min … max):   983.7 ms … 998.9 ms    10 runs
- 
-### Benchmark 3: `./swap-stack`
-    Time (mean ± σ):     987.4 ms ±   2.6 ms    [User: 985.7 ms, System: 0.7 ms]
-    Range (min … max):   983.3 ms … 992.5 ms    10 runs
- 
 ### Summary
     ./swap-stack ran
         1.00 ± 0.01 times faster than ./swap-temp
